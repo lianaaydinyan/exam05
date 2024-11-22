@@ -2,17 +2,22 @@
 #define _Spellbook_
 
 
+#include "ASpell.hpp"
+#include <vector>
+#include <map>
+
 class Spellbook
 {
-    private:
-        Spellbook(const Spellbook& obj);
-        Spellbook& operator=(const Spell& obj);
-    public:
-        ~Spellbook();
-        Spellbook();
-        void learnSpell(ASpell* obj);
-        void forgetSpell(string const& obj);
-        ASpell* createSpell(string const& obj);
+	private:
+		std::vector<std::map<std::string, std::string>> book;
+		Spellbook(const Spellbook& obj);
+		Spellbook& operator=(const Spell& obj);
+	public:
+		~Spellbook();
+		Spellbook();
+		void learnSpell(ASpell* obj);
+		void forgetSpell(string const& str);
+		ASpell* createSpell(string const& str);
 
 };
 
